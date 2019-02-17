@@ -7,7 +7,7 @@ public class BoardView {
     private static JFrame mainWindow;
     private JButton b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
-    public BoardView() {
+    BoardView() {
         mainWindow = new JFrame();
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.setSize(400, 400);
@@ -18,6 +18,10 @@ public class BoardView {
 
         mainWindow.setTitle("TicTacToe");
         mainWindow.setVisible(true);
+    }
+
+    public static JFrame getMainWindow() {
+        return mainWindow;
     }
 
     private JPanel createButtonsPanel() {
@@ -45,5 +49,41 @@ public class BoardView {
 
         buttons.setLayout(new GridLayout(3, 3));
         return buttons;
+    }
+
+    public JButton getB1() {
+        return b1;
+    }
+
+    public JButton getB2() {
+        return b2;
+    }
+
+    public JButton getB3() {
+        return b3;
+    }
+
+    public JButton getB4() {
+        return b4;
+    }
+
+    public JButton getB5() {
+        return b5;
+    }
+
+    public JButton getB6() {
+        return b6;
+    }
+
+    public JButton getB7() {
+        return b7;
+    }
+
+    public JButton getB8() {
+        return b8;
+    }
+
+    public JButton getB9() {
+        return b9;
     }
 }
