@@ -50,6 +50,17 @@ public class Board {
                 return true;
             }
         }
+        // Diagonal
+        if (board.get(1).equals(board.get(5)) && board.get(5).equals(board.get(9))) {
+            if (!board.get(1).equals("") && !board.get(5).equals("") && !board.get(9).equals("")) {
+                return true;
+            }
+        }
+        if (board.get(3).equals(board.get(5)) && board.get(5).equals(board.get(7))) {
+            if (!board.get(3).equals("") && !board.get(5).equals("") && !board.get(7).equals("")) {
+                return true;
+            }
+        }
         return false;
     }
 }

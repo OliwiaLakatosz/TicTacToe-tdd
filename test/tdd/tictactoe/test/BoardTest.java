@@ -97,4 +97,24 @@ public class BoardTest {
         System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
+
+    @Test
+    public void testCheckWinInDiagonalWinLeft() {
+        Map<Integer, String> testBoard = board.getBoard();
+        testBoard.put(1, "X");
+        testBoard.put(5, "X");
+        testBoard.put(9, "X");
+        System.out.println(testBoard);
+        Assert.assertTrue(board.isWin());
+    }
+
+    @Test
+    public void testCheckWinInDiagonalWinRight() {
+        Map<Integer, String> testBoard = board.getBoard();
+        testBoard.put(3, "X");
+        testBoard.put(5, "X");
+        testBoard.put(7, "X");
+        System.out.println(testBoard);
+        Assert.assertTrue(board.isWin());
+    }
 }
