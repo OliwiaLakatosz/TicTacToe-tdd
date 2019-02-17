@@ -25,16 +25,46 @@ public class BoardTest {
     public void testCheckIfCreatedBoardIsEmpty() {
         Map<Integer, String> testBoard = board.getBoard();
         for (Integer position : testBoard.keySet()) {
-            Assert.assertNull(testBoard.get(position));
+            Assert.assertEquals("", testBoard.get(position));
         }
     }
 
     @Test
-    public void testCheckWinInRow() {
+    public void testCheckWinInFirstRow() {
         Map<Integer, String> testBoard = board.getBoard();
         testBoard.put(1, "X");
         testBoard.put(2, "X");
         testBoard.put(3, "X");
+        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
+    }
+    @Test
+    public void testCheckWinInSecondRow() {
+        Map<Integer, String> testBoard = board.getBoard();
+        testBoard.put(4, "Y");
+        testBoard.put(5, "Y");
+        testBoard.put(6, "Y");
+        System.out.println(testBoard);
+        Assert.assertTrue(board.isWin());
+    }
+
+    @Test
+    public void testCheckWinInThirdRow() {
+        Map<Integer, String> testBoard = board.getBoard();
+        testBoard.put(7, "X");
+        testBoard.put(8, "X");
+        testBoard.put(9, "X");
+        System.out.println(testBoard);
+        Assert.assertTrue(board.isWin());
+    }
+
+    @Test
+    public void testCheckIfThereIsNoWinInRow() {
+        Map<Integer, String> testBoard = board.getBoard();
+        testBoard.put(1, "X");
+        testBoard.put(2, "Y");
+        testBoard.put(3, "X");
+        System.out.println(testBoard);
+        Assert.assertFalse(board.isWin());
     }
 }
