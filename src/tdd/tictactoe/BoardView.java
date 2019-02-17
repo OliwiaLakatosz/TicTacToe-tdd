@@ -1,5 +1,7 @@
 package tdd.tictactoe;
 
+import tdd.tictactoe.tdd.tictactoe.logic.Board;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -46,6 +48,16 @@ public class BoardView {
         buttons.add(b7);
         buttons.add(b8);
         buttons.add(b9);
+
+        b1.addActionListener(e -> FlowController.clickButton());
+        b2.addActionListener(null);
+        b3.addActionListener(null);
+        b4.addActionListener(null);
+        b5.addActionListener(null);
+        b6.addActionListener(null);
+        b7.addActionListener(null);
+        b8.addActionListener(null);
+        b9.addActionListener(null);
 
         buttons.setLayout(new GridLayout(3, 3));
         return buttons;

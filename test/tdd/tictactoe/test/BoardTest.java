@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import tdd.tictactoe.tdd.tictactoe.logic.Board;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class BoardTest {
@@ -35,7 +34,6 @@ public class BoardTest {
         testBoard.put(1, "X");
         testBoard.put(2, "X");
         testBoard.put(3, "X");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
     @Test
@@ -44,7 +42,6 @@ public class BoardTest {
         testBoard.put(4, "Y");
         testBoard.put(5, "Y");
         testBoard.put(6, "Y");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
 
@@ -54,7 +51,6 @@ public class BoardTest {
         testBoard.put(7, "X");
         testBoard.put(8, "X");
         testBoard.put(9, "X");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
 
@@ -64,7 +60,6 @@ public class BoardTest {
         testBoard.put(1, "X");
         testBoard.put(2, "Y");
         testBoard.put(3, "X");
-        System.out.println(testBoard);
         Assert.assertFalse(board.isWin());
     }
 
@@ -74,7 +69,6 @@ public class BoardTest {
         testBoard.put(1, "X");
         testBoard.put(4, "X");
         testBoard.put(7, "X");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
 
@@ -84,7 +78,6 @@ public class BoardTest {
         testBoard.put(2, "X");
         testBoard.put(5, "X");
         testBoard.put(8, "X");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
 
@@ -94,7 +87,6 @@ public class BoardTest {
         testBoard.put(3, "X");
         testBoard.put(6, "X");
         testBoard.put(9, "X");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
 
@@ -104,7 +96,6 @@ public class BoardTest {
         testBoard.put(1, "X");
         testBoard.put(5, "X");
         testBoard.put(9, "X");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
 
@@ -114,7 +105,6 @@ public class BoardTest {
         testBoard.put(3, "X");
         testBoard.put(5, "X");
         testBoard.put(7, "X");
-        System.out.println(testBoard);
         Assert.assertTrue(board.isWin());
     }
 }

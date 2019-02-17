@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class Board {
 
-    private Map<Integer, String> board = new LinkedHashMap<>();
+    private static Map<Integer, String> board = new LinkedHashMap<>();
 
     public Board() {
         for (int i = 1; i < 10; i++) {
-            this.board.put(i, "");
+            board.put(i, "");
         }
     }
 
