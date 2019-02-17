@@ -17,4 +17,8 @@ public class Board {
         return board;
     }
 
+    public boolean isWin() {
+        return false;
+    }
+
 }
