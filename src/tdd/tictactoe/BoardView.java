@@ -2,6 +2,8 @@ package tdd.tictactoe;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BoardView {
     private static JFrame mainWindow;
@@ -31,6 +33,7 @@ public class BoardView {
 
     private JPanel createButtonsPanel() {
         JPanel buttons = new JPanel();
+        List<Button> buttonsList = new ArrayList<>();
 
         b1 = new Button(1,"");
         b2 = new Button(2,"");
@@ -42,25 +45,23 @@ public class BoardView {
         b8 = new Button(8,"");
         b9 = new Button(9,"");
 
-        buttons.add(b1);
-        buttons.add(b2);
-        buttons.add(b3);
-        buttons.add(b4);
-        buttons.add(b5);
-        buttons.add(b6);
-        buttons.add(b7);
-        buttons.add(b8);
-        buttons.add(b9);
+        buttonsList.add(b1);
+        buttonsList.add(b2);
+        buttonsList.add(b3);
+        buttonsList.add(b4);
+        buttonsList.add(b5);
+        buttonsList.add(b6);
+        buttonsList.add(b7);
+        buttonsList.add(b8);
+        buttonsList.add(b9);
 
-        b1.addActionListener(e -> FlowController.clickButton(b1));
-        b2.addActionListener(e -> FlowController.clickButton(b2));
-        b3.addActionListener(e -> FlowController.clickButton(b3));
-        b4.addActionListener(e -> FlowController.clickButton(b4));
-        b5.addActionListener(e -> FlowController.clickButton(b5));
-        b6.addActionListener(e -> FlowController.clickButton(b6));
-        b7.addActionListener(e -> FlowController.clickButton(b7));
-        b8.addActionListener(e -> FlowController.clickButton(b8));
-        b9.addActionListener(e -> FlowController.clickButton(b9));
+        for (Button btn : buttonsList) {
+            buttons.add(btn);
+        }
+
+        for (Button btn : buttonsList) {
+            btn.addActionListener(e -> FlowController.clickButton(btn));
+        }
 
         buttons.setLayout(new GridLayout(3, 3));
         return buttons;
