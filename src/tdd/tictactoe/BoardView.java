@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class BoardView {
     private static JFrame mainWindow;
+    private JPanel buttonPanel;
     private Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
     BoardView() {
@@ -13,11 +14,15 @@ public class BoardView {
         mainWindow.setSize(400, 400);
 
         mainWindow.setLayout(new GridLayout(1, 1));
-        JPanel buttonPanel = createButtonsPanel();
+        buttonPanel = createButtonsPanel();
         mainWindow.add(buttonPanel);
 
         mainWindow.setTitle("TicTacToe");
         mainWindow.setVisible(true);
+    }
+
+    public JPanel getButtonPanel() {
+        return buttonPanel;
     }
 
     public static JFrame getMainWindow() {

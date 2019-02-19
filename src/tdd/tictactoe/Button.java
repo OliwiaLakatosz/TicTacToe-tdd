@@ -2,15 +2,15 @@ package tdd.tictactoe;
 
 import javax.swing.*;
 
-public class Button extends JButton {
+class Button extends JButton {
     private int ID;
 
-    public Button(int id, String text) {
+    Button(int id, String text) {
         super(text);
         this.ID = id;
     }
 
-    public int getID() {
+    int getID() {
         return ID;
     }
 }
