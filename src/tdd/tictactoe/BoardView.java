@@ -8,7 +8,6 @@ import java.util.List;
 public class BoardView {
     private static JFrame mainWindow;
     private JPanel buttonPanel;
-    private Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
     BoardView() {
         mainWindow = new JFrame();
@@ -35,15 +34,15 @@ public class BoardView {
         JPanel buttons = new JPanel();
         List<Button> buttonsList = new ArrayList<>();
 
-        b1 = new Button(1,"");
-        b2 = new Button(2,"");
-        b3 = new Button(3,"");
-        b4 = new Button(4,"");
-        b5 = new Button(5,"");
-        b6 = new Button(6,"");
-        b7 = new Button(7,"");
-        b8 = new Button(8,"");
-        b9 = new Button(9,"");
+        Button b1 = new Button(1, "");
+        Button b2 = new Button(2, "");
+        Button b3 = new Button(3, "");
+        Button b4 = new Button(4, "");
+        Button b5 = new Button(5, "");
+        Button b6 = new Button(6, "");
+        Button b7 = new Button(7, "");
+        Button b8 = new Button(8, "");
+        Button b9 = new Button(9, "");
 
         buttonsList.add(b1);
         buttonsList.add(b2);
@@ -59,9 +58,10 @@ public class BoardView {
             buttons.add(btn);
         }
 
-        for (Button btn : buttonsList) {
-            btn.addActionListener(e -> FlowController.clickButton(btn));
-        }
+        for (Button btn : buttonsList)
+            btn.addActionListener(e -> {
+                FlowController.clickButton(btn);
+            });
 
         buttons.setLayout(new GridLayout(3, 3));
         return buttons;
