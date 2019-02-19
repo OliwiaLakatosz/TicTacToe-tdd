@@ -22,8 +22,6 @@ class FlowController {
         button.setEnabled(false);
         button.setText(sign);
         button.setFont(font);
-        System.out.println(boardObject.isWin());
-        System.out.println(board);
         announceWinner(sign);
     }
 
