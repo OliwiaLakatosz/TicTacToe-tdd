@@ -1,13 +1,11 @@
 package tdd.tictactoe;
 
-import tdd.tictactoe.tdd.tictactoe.logic.Board;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class BoardView {
     private static JFrame mainWindow;
-    private JButton b1, b2, b3, b4, b5, b6, b7, b8, b9;
+    private Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
 
     BoardView() {
         mainWindow = new JFrame();
@@ -29,15 +27,15 @@ public class BoardView {
     private JPanel createButtonsPanel() {
         JPanel buttons = new JPanel();
 
-        b1 = new JButton("1");
-        b2 = new JButton("2");
-        b3 = new JButton("3");
-        b4 = new JButton("4");
-        b5 = new JButton("5");
-        b6 = new JButton("6");
-        b7 = new JButton("7");
-        b8 = new JButton("8");
-        b9 = new JButton("9");
+        b1 = new Button(1,"");
+        b2 = new Button(2,"");
+        b3 = new Button(3,"");
+        b4 = new Button(4,"");
+        b5 = new Button(5,"");
+        b6 = new Button(6,"");
+        b7 = new Button(7,"");
+        b8 = new Button(8,"");
+        b9 = new Button(9,"");
 
         buttons.add(b1);
         buttons.add(b2);
@@ -49,53 +47,17 @@ public class BoardView {
         buttons.add(b8);
         buttons.add(b9);
 
-        b1.addActionListener(e -> FlowController.clickButton());
-        b2.addActionListener(null);
-        b3.addActionListener(null);
-        b4.addActionListener(null);
-        b5.addActionListener(null);
-        b6.addActionListener(null);
-        b7.addActionListener(null);
-        b8.addActionListener(null);
-        b9.addActionListener(null);
+        b1.addActionListener(e -> FlowController.clickButton(b1));
+        b2.addActionListener(e -> FlowController.clickButton(b2));
+        b3.addActionListener(e -> FlowController.clickButton(b3));
+        b4.addActionListener(e -> FlowController.clickButton(b4));
+        b5.addActionListener(e -> FlowController.clickButton(b5));
+        b6.addActionListener(e -> FlowController.clickButton(b6));
+        b7.addActionListener(e -> FlowController.clickButton(b7));
+        b8.addActionListener(e -> FlowController.clickButton(b8));
+        b9.addActionListener(e -> FlowController.clickButton(b9));
 
         buttons.setLayout(new GridLayout(3, 3));
         return buttons;
-    }
-
-    public JButton getB1() {
-        return b1;
-    }
-
-    public JButton getB2() {
-        return b2;
-    }
-
-    public JButton getB3() {
-        return b3;
-    }
-
-    public JButton getB4() {
-        return b4;
-    }
-
-    public JButton getB5() {
-        return b5;
-    }
-
-    public JButton getB6() {
-        return b6;
-    }
-
-    public JButton getB7() {
-        return b7;
-    }
-
-    public JButton getB8() {
-        return b8;
-    }
-
-    public JButton getB9() {
-        return b9;
     }
 }
