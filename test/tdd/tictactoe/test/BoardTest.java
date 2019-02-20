@@ -34,6 +34,12 @@ public class BoardTest {
         testBoard.put(1, "X");
         testBoard.put(2, "X");
         testBoard.put(3, "X");
+        testBoard.put(4, "O");
+        testBoard.put(5, "X");
+        testBoard.put(6, "O");
+        testBoard.put(7, "O");
+        testBoard.put(8, "O");
+        testBoard.put(9, "X");
         Assert.assertTrue(board.isWin());
     }
     @Test
@@ -42,15 +48,27 @@ public class BoardTest {
         testBoard.put(4, "O");
         testBoard.put(5, "O");
         testBoard.put(6, "O");
+        testBoard.put(1, "X");
+        testBoard.put(2, "O");
+        testBoard.put(3, "X");
+        testBoard.put(7, "X");
+        testBoard.put(8, "X");
+        testBoard.put(9, "O");
         Assert.assertTrue(board.isWin());
     }
 
     @Test
     public void testCheckWinInThirdRow() {
         Map<Integer, String> testBoard = board.getBoard();
-        testBoard.put(7, "X");
-        testBoard.put(8, "X");
-        testBoard.put(9, "X");
+        testBoard.put(1, "X");
+        testBoard.put(2, "O");
+        testBoard.put(3, "X");
+        testBoard.put(4, "X");
+        testBoard.put(5, "X");
+        testBoard.put(6, "O");
+        testBoard.put(7, "O");
+        testBoard.put(8, "O");
+        testBoard.put(9, "O");
         Assert.assertTrue(board.isWin());
     }
 
@@ -60,6 +78,13 @@ public class BoardTest {
         testBoard.put(1, "X");
         testBoard.put(2, "O");
         testBoard.put(3, "X");
+        testBoard.put(4, "X");
+        testBoard.put(5, "O");
+        testBoard.put(6, "O");
+        testBoard.put(7, "O");
+        testBoard.put(8, "X");
+        testBoard.put(9, "X");
+        System.out.println(testBoard);
         Assert.assertFalse(board.isWin());
     }
 
