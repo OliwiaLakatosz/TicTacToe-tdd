@@ -1,4 +1,4 @@
-package tdd.tictactoe.tdd.tictactoe.logic;
+package tdd.tictactoe.logic;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -15,6 +15,12 @@ public class Board {
 
     public Map<Integer, String> getBoard() {
         return board;
+    }
+    
+    public void clearBoard() {
+        for (Integer index : getBoard().keySet()) {
+            board.put(index, "");
+        }
     }
 
     public boolean isWin() {

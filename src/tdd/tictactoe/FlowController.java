@@ -1,6 +1,6 @@
 package tdd.tictactoe;
 
-import tdd.tictactoe.tdd.tictactoe.logic.Board;
+import tdd.tictactoe.logic.Board;
 
 import javax.swing.*;
 import java.awt.*;

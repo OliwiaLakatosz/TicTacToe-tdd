@@ -3,7 +3,7 @@ package tdd.tictactoe.test;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import tdd.tictactoe.tdd.tictactoe.logic.Board;
+import tdd.tictactoe.logic.Board;
 
 import java.util.Map;
 
@@ -39,9 +39,9 @@ public class BoardTest {
     @Test
     public void testCheckWinInSecondRow() {
         Map<Integer, String> testBoard = board.getBoard();
-        testBoard.put(4, "Y");
-        testBoard.put(5, "Y");
-        testBoard.put(6, "Y");
+        testBoard.put(4, "O");
+        testBoard.put(5, "O");
+        testBoard.put(6, "O");
         Assert.assertTrue(board.isWin());
     }
 
@@ -58,7 +58,7 @@ public class BoardTest {
     public void testCheckIfThereIsNoWinInRow() {
         Map<Integer, String> testBoard = board.getBoard();
         testBoard.put(1, "X");
-        testBoard.put(2, "Y");
+        testBoard.put(2, "O");
         testBoard.put(3, "X");
         Assert.assertFalse(board.isWin());
     }
@@ -106,5 +106,23 @@ public class BoardTest {
         testBoard.put(5, "X");
         testBoard.put(7, "X");
         Assert.assertTrue(board.isWin());
+    }
+
+    @Test
+    public void testCheckIfClearedBoardIsEmpty() {
+        Map<Integer, String > testBoard = board.getBoard();
+        testBoard.put(1, "X");
+        testBoard.put(2, "O");
+        testBoard.put(3, "X");
+        testBoard.put(4, "X");
+        testBoard.put(5, "O");
+        testBoard.put(6, "X");
+        testBoard.put(7, "X");
+        testBoard.put(8, "O");
+        testBoard.put(9, "O");
+        board.clearBoard();
+        for (Integer i : testBoard.keySet()) {
+            Assert.assertEquals("", testBoard.get(i));
+        }
     }
 }
