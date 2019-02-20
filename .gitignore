@@ -23,3 +23,5 @@
 hs_err_pid*
 out/production/TicTacToe-tdd/META-INF/TicTacToe-tdd.kotlin_module
 out/test/TicTacToe-tdd/META-INF/TicTacToe-tdd.kotlin_module
+src/META-INF/MANIFEST.MF
+out/production/TicTacToe-tdd/META-INF/MANIFEST.MF
