@@ -25,11 +25,11 @@ class FlowController {
         announceWinner(sign);
     }
 
-    static void announceWinner(String winner) {
+    private static void announceWinner(String winner) {
         if (boardObject.isWin()) {
             String msg = "Winner: " + winner;
             JOptionPane optionPane = new JOptionPane();
-            int option = optionPane.showOptionDialog(BoardView.getMainWindow(), msg, "Game Over",
+            int option = JOptionPane.showOptionDialog(BoardView.getMainWindow(), msg, "Game Over",
                     JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
                     null, options, options[0]);
             if (option == 0) {
@@ -41,8 +41,12 @@ class FlowController {
         }
     }
 
-    static void playAgain() {
-        // TODO: implement reinit method - clear board map and gui
-        System.out.println("To be implemented!");
+    private static void playAgain() {
+        boardObject.clearBoard();
+        for (Button btn :
+                BoardView.getButtons()) {
+            btn.setEnabled(true);
+            btn.setText("");
+        }
     }
 }
