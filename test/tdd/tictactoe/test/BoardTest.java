@@ -84,7 +84,6 @@ public class BoardTest {
         testBoard.put(7, "O");
         testBoard.put(8, "X");
         testBoard.put(9, "X");
-        System.out.println(testBoard);
         Assert.assertFalse(board.isWin());
     }
 
@@ -149,5 +148,20 @@ public class BoardTest {
         for (Integer i : testBoard.keySet()) {
             Assert.assertEquals("", testBoard.get(i));
         }
+    }
+
+    @Test
+    public void testCheckIfBoardIsFull() {
+        Map<Integer, String > testBoard = board.getBoard();
+        testBoard.put(1, "X");
+        testBoard.put(2, "O");
+        testBoard.put(3, "X");
+        testBoard.put(4, "X");
+        testBoard.put(5, "O");
+        testBoard.put(6, "O");
+        testBoard.put(7, "O");
+        testBoard.put(8, "X");
+        testBoard.put(9, "X");
+        Assert.assertTrue(board.checkIfBoardIsFull());
     }
 }

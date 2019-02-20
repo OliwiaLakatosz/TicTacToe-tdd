@@ -17,6 +17,15 @@ public class Board {
         return board;
     }
     
+    public boolean checkIfBoardIsFull() {
+        for (Map.Entry<Integer, String > entry : getBoard().entrySet()) {
+            if (entry.getValue().equals("")) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     public void clearBoard() {
         for (Integer index : getBoard().keySet()) {
             board.put(index, "");

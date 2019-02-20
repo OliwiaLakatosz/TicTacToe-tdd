@@ -25,19 +25,25 @@ class FlowController {
         announceWinner(sign);
     }
 
+    private static void dialog(String msg) {
+        JOptionPane optionPane = new JOptionPane();
+        int option = JOptionPane.showOptionDialog(BoardView.getMainWindow(), msg, "Game Over",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                null, options, options[0]);
+        if (option == 0) {
+            playAgain();
+        } else if (option == 1) {
+            BoardView.getMainWindow().dispose();
+        }
+    }
+
     private static void announceWinner(String winner) {
         if (boardObject.isWin()) {
             String msg = "Winner: " + winner;
-            JOptionPane optionPane = new JOptionPane();
-            int option = JOptionPane.showOptionDialog(BoardView.getMainWindow(), msg, "Game Over",
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
-                    null, options, options[0]);
-            if (option == 0) {
-                playAgain();
-            } else if (option == 1) {
-                BoardView.getMainWindow().dispose();
-            }
-
+            dialog(msg);
+        } else if (boardObject.checkIfBoardIsFull()) {
+            String msg = "Draw!";
+            dialog(msg);
         }
     }
 
