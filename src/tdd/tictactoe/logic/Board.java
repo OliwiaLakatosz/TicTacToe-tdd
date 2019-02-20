@@ -35,7 +35,7 @@ public class Board {
                 return true;
             }
         }
-        if (board.get(7).equals(board.get(7)) && board.get(7).equals(board.get(7))) {
+        if (board.get(7).equals(board.get(8)) && board.get(8).equals(board.get(9))) {
             if (!board.get(7).equals("") && !board.get(8).equals("") && !board.get(9).equals("")) {
                 return true;
             }
