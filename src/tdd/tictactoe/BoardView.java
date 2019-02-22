@@ -22,6 +22,10 @@ public class BoardView {
         return buttons;
     }
 
+    public static JFrame getMainWindow() {
+        return mainWindow;
+    }
+
     BoardView() {
         mainWindow = new JFrame();
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,10 +41,6 @@ public class BoardView {
 
     public JPanel getButtonPanel() {
         return buttonPanel;
-    }
-
-    public static JFrame getMainWindow() {
-        return mainWindow;
     }
 
     private JPanel createButtonsPanel() {
