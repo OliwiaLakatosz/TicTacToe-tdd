@@ -164,4 +164,12 @@ public class BoardTest {
         testBoard.put(9, "X");
         Assert.assertTrue(board.checkIfBoardIsFull());
     }
+
+    @Test
+    public void testCheckIfFieldIsEmpty() {
+        Map<Integer, String > testBoard = board.getBoard();
+        testBoard.put(1, "X");
+        Assert.assertFalse(board.isFieldEmpty(1));
+        Assert.assertTrue(board.isFieldEmpty(2));
+    }
 }

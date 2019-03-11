@@ -14,6 +14,10 @@ class FlowController {
     private static Object[] options = {"Play Again", "Exit"};
     private static int playerIndex = 0;
 
+    static void playGame() {
+        playerIndex = (playerIndex + 1) % 2;
+    }
+
     static void clickButton(Button button) {
         Map<Integer, String> board = boardObject.getBoard();
         playerIndex = (playerIndex + 1) % 2;
@@ -49,6 +53,7 @@ class FlowController {
 
     private static void playAgain() {
         boardObject.clearBoard();
+        playerIndex = 0;
         for (Button btn :
                 BoardView.getButtons()) {
             btn.setEnabled(true);

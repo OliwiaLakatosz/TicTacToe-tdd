@@ -2,6 +2,7 @@ package tdd.tictactoe.logic;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Board {
 
@@ -29,6 +30,23 @@ public class Board {
     public void clearBoard() {
         for (Integer index : getBoard().keySet()) {
             board.put(index, "");
+        }
+    }
+
+    public boolean isFieldEmpty(int index) {
+        if (!board.get(index).equals("")){
+            return false;
+        }
+        return true;
+    }
+
+    public void putRandomOnBoard() {
+        while (true) {
+           int randomIndex = ThreadLocalRandom.current().nextInt(1, 9);
+           if (isFieldEmpty(randomIndex)) {
+               board.put(randomIndex, "O");
+               break;
+           }
         }
     }
 
