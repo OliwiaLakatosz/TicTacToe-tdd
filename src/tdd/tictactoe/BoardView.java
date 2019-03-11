@@ -51,8 +51,12 @@ public class BoardView {
             buttons.add(btn);
         }
 
-        for (Button btn : list)
-            btn.addActionListener(e -> FlowController.clickButton(btn));
+        for (Button btn : list) {
+            btn.addActionListener(e -> {
+                ConnectWithButton model = new ConnectWithButton();
+                model.setID(btn.getID());
+            });
+        }
 
         buttons.setLayout(new GridLayout(3, 3));
         return buttons;

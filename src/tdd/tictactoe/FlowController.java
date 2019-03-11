@@ -4,7 +4,6 @@ import tdd.tictactoe.logic.Board;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Map;
 
 class FlowController {
 
@@ -15,16 +14,29 @@ class FlowController {
     private static int playerIndex = 0;
 
     static void playGame() {
-        playerIndex = (playerIndex + 1) % 2;
+        while (!boardObject.isWin()) {
+            playerIndex = (playerIndex + 1) % 2;
+            if (PLAYER[playerIndex].equals("X")) {
+//                e -> clickButton();
+                // ???
+            }
+        }
+
+
     }
 
-    static void clickButton(Button button) {
-        Map<Integer, String> board = boardObject.getBoard();
-        playerIndex = (playerIndex + 1) % 2;
-        String sign = PLAYER[playerIndex];
-        board.put(button.getID(), sign);
-        makeButtonClicked(sign, button);
-        announceWinner(sign);
+    static void putOnBoard(int place) {
+
+    }
+
+    static int clickButton(Button button) {
+//        Map<Integer, String> board = boardObject.getBoard();
+//        playerIndex = (playerIndex + 1) % 2;
+//        String sign = PLAYER[playerIndex];
+//        board.put(button.getID(), sign);
+//        makeButtonClicked(sign, button);
+//        announceWinner(sign);
+        return button.getID();
     }
 
     static void makeButtonClicked(String sign, Button button) {
