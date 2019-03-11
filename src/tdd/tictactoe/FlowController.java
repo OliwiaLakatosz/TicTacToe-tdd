@@ -23,6 +23,11 @@ class FlowController {
         playerIndex = (playerIndex + 1) % 2;
         String sign = PLAYER[playerIndex];
         board.put(button.getID(), sign);
+        makeButtonClicked(sign, button);
+        announceWinner(sign);
+    }
+
+    static void makeButtonClicked(String sign, Button button) {
         button.setEnabled(false);
         button.setText(sign);
         button.setFont(font);
